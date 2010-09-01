@@ -3,7 +3,8 @@
 # Usage: ./bump-version 2.8.awesome
 
 NEW_VERSION="$1"
-DIRECTORIES="bioclipse.balloon/plugins/net.bioclipse.*
+DIRECTORIES="
+             bioclipse.balloon/plugins/net.bioclipse.*
              bioclipse.balloon/features/net.bioclipse.balloon_feature
              bioclipse.cheminformatics/plugins/net.bioclipse.*
              bioclipse.cheminformatics/features/net.bioclipse.cdk_feature
@@ -17,20 +18,14 @@ DIRECTORIES="bioclipse.balloon/plugins/net.bioclipse.*
              bioclipse.rdf/features/net.bioclipse.rdf.ui_feature
              bioclipse.rdf/features/net.bioclipse.rdf_feature
              bioclipse.core/plugins/net.bioclipse.*
-             bioclipse.core/features/net.bioclipse.birt_feature
              bioclipse.core/features/net.bioclipse.core_feature
              bioclipse.core/features/net.bioclipse.platform_feature
              bioclipse.social/plugins/net.bioclipse.*
              bioclipse.social/features/net.bioclipse.social_feature
-             bioclipse.data/plugins/net.bioclipse.data.sampledata
-             bioclipse.data/features/net.bioclipse.sampledata
              bioclipse.qsar/plugins/net.bioclipse.qsar*
              bioclipse.qsar/plugins/net.bioclipse.cdk*
              bioclipse.qsar/features/net.bioclipse.qsar.xmpp_feature
              bioclipse.qsar/features/net.bioclipse.qsar_feature
-             bioclipse.joelib/plugins/net.bioclipse*
-             bioclipse.joelib/features/net.bioclipse.joelib_feature
-             bioclipse.vscreen
              bioclipse.ds/plugins/net.bioclipse.*
              bioclipse.ds/features/net.bioclipse.*
              bioclipse.experimental/plugins/net.bioclipse.*
@@ -51,4 +46,4 @@ perl -i -lpe '
     s/(-Declipse.buildId=\&quot).*?(\&quot;)/$1;'$NEW_VERSION'$2/;
 ' bioclipse.core/features/net.bioclipse.platform_feature/bioclipse.product
 
-
+echo 0=$NEW_VERSION > bioclipse.core/plugins/net.bioclipse.ui/about.mappings
