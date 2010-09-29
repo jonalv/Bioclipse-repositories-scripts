@@ -1,7 +1,7 @@
 ls -d bioclipse.* | perl -MTerm::ANSIColor=:constants -Mstrict -wne ' 
     binmode STDOUT, ":utf8";
     chomp;
-    my $output=`cd $_; git --no-pager log v2.4.0..2.4.x 2>&1`; 
+    my $output=`cd $_; git --no-pager log v2.4.1..2.4.x 2>&1`; 
     if ($output=~/commit/) {
         print YELLOW chr(0x26a0), " ", uc($_),"has changed";
     }
